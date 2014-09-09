@@ -1,0 +1,27 @@
+<form id="login_form" name="login_form" role="form" novalidate ng-submit="login()" ng-hide="user.authenticated">
+  <div class="form-group"
+  	ng-class="{'has-error':  login_form.email.$invalid && (submitted)}">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Enter email" autofocus required ng-model="user.email">
+    <div class="help-block" 
+        ng-show="login_form.email.$invalid && (submitted)">
+	    <small 
+	            ng-show="login_form.email.$error">
+	            Must be a valid email address.
+	    </small>
+  	</div>
+  </div>
+  <div class="form-group"
+  	ng-class="{'has-error':  login_form.password.$invalid && (submitted)}">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password" required ng-model="user.password" ng-minlenth=8 ng-maxlength=25 ng-pattern="/(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,25})$/">
+    <div class="help-block">
+	    <small>
+	            8-25 characters, and contain a number
+	    </small>
+  	</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Continue</button>
+</form>
+<div class="login_completed" ng-show="user.authenticated">Your account is now authenticated.</div>
+
