@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginController'
       })
+      .when('/grid', {
+        templateUrl: 'views/datatable.html',
+        controller: 'DatatableController'
+      })
       .otherwise({
         redirectTo: '/'
       });

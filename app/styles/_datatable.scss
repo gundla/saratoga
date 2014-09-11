@@ -1,0 +1,12 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+#myDatatable {
+  min-width: 400px;
+  margin: 40px auto;
+  th, td {
+  	padding: 5px;
+  }
+  th {
+  	font-weight: bold;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="datatable-body">
+	<table id="myDatatable" ng-model="data">
+		<thead><tr>
+			<th ng-repeat="key in keys">
+				{{key | propercase}}
+			</th>
+		</tr></thead>
+		<tbody>
+			<tr ng-repeat="row in data">
+				<td>{{row.name}}</td>
+				<td>{{row.age}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="datatable-footer">
+	<div class="pagination">
+		<a href ng-click="prev()" role="button" class="btn glyphicon glyphicon-step-backward" ng-disabled="isPrevDisabled"></a>
+    	{{startingRowNumber}} - {{endingRowNumber}} of {{totalRows}}
+    	<a href ng-click="next()" role="button" class="btn glyphicon glyphicon-step-forward" ng-disabled="isNextDisabled"></a>
+	</div>
+</div>
